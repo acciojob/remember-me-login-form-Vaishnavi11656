@@ -1,44 +1,45 @@
-//your JS code here. If required.
-const form = document.getElementById("form");
-const usernameInput = document.getElementById("username");
-const passwordInput = document.getElementById("password");
-const checkbox = document.getElementById("checkbox");
-const existingBtn = document.getElementById("existing");
+window.addEventListener("DOMContentLoaded", function () {
 
-// Show existing user button if credentials are saved
-window.addEventListener("load", () => {
+    const form = document.querySelector("form");
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
+    const checkbox = document.getElementById("checkbox");
+    const existingBtn = document.getElementById("existing");
+
+    // Show existing user button if credentials are saved
     const savedUsername = localStorage.getItem("username");
     const savedPassword = localStorage.getItem("password");
 
     if (savedUsername && savedPassword) {
         existingBtn.style.display = "inline-block";
     }
-});
 
-// Handle form submission
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
+    // Handle form submit
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    const username = usernameInput.value;
-    const password = passwordInput.value;
+        const username = usernameInput.value;
+        const password = passwordInput.value;
 
-    alert(`Logged in as ${username}`);
+        alert(`Logged in as ${username}`);
 
-    if (checkbox.checked) {
-        localStorage.setItem("username", username);
-        localStorage.setItem("password", password);
-        existingBtn.style.display = "inline-block";
-    } else {
-        localStorage.removeItem("username");
-        localStorage.removeItem("password");
-        existingBtn.style.display = "none";
-    }
-});
+        if (checkbox.checked) {
+            localStorage.setItem("username", username);
+            localStorage.setItem("password", password);
+            existingBtn.style.display = "inline-block";
+        } else {
+            localStorage.removeItem("username");
+            localStorage.removeItem("password");
+            existingBtn.style.display = "none";
+        }
+    });
 
-// Login as existing user
-existingBtn.addEventListener("click", function () {
-    const savedUsername = localStorage.getItem("username");
-    if (savedUsername) {
-        alert(`Logged in as ${savedUsername}`);
-    }
+    // Existing user login
+    existingBtn.addEventListener("click", function () {
+        const savedUsername = localStorage.getItem("username");
+        if (savedUsername) {
+            alert(`Logged in as ${savedUsername}`);
+        }
+    });
+
 });
