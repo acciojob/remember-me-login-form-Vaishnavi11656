@@ -1,35 +1,32 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <title>Login</title>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-	<h1>Login Form</h1>
-	<form id="form">
-	<input type="text" placeholder="Username" id="username"  />
-	</br></br>
-	<input type="password" placeholder="Password" id="password" />
-	</br></br>
 
-		<lable>
-				<input type="checkbox" id="checkbox" " />
-			Remember Me.
+    <h1>Login Form</h1>
 
-		</lable>
-	</br></br>
-	<input type="submit" placeholder="submit" id="Submit" />
-	</form>
-</br>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Username" />
+        <br /><br />
 
-	<button id="exixting" style="display:none;">Login as existing user</button>
-		
-    <script type="text/javascript" src="./script.js">
-</script>
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Password" />
+        <br /><br />
 
+        <label for="checkbox">Remember me:</label>
+        <input type="checkbox" id="checkbox" />
+        <br /><br />
+
+        <input type="submit" id="submit" value="Submit" />
+    </form>
+
+    <br />
+
+    <button id="existing" style="display:none;">Login as existing user</button>
+
+    <script src="script.js"></script>
 </body>
-
 </html>
